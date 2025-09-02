@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>ときメモ風ミニゲーム（コンパクトUI）</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="container">
+    <section class="panel panel-left">
+      <h1 class="title">ときメモ風ミニゲーム</h1>
+
+      <div class="card">
+        <h2 class="card-title">
+          ステータス
+          <span id="turninfo" class="turninfo"></span>
+        </h2>
+        <div id="status" class="status-row"></div>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">行動</h2>
+        <div class="actions">
+          <button id="btnStudy" onclick="study()">勉強</button>
+          <button id="btnSports" onclick="sports()">運動</button>
+          <button id="btnStyle" onclick="styleUp()">おしゃれ</button>
+          <button id="btnDate" class="accent" onclick="date()">デート</button>
+        </div>
+      </div>
+
+      <button id="restartBtn" class="restart" onclick="resetGame()" style="display:none;">もう一度</button>
+    </section>
+
+    <section class="panel panel-right">
+      <div class="card">
+        <h2 class="card-title">キャラクター</h2>
+        <div id="characters" class="characters"></div>
+      </div>
+
+      <div class="card log-card">
+        <h2 class="card-title">イベントログ（最新が上）</h2>
+        <div id="log" class="log"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- デート相手選択モーダル -->
+  <div id="datePicker" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="datePickerTitle">
+      <h3 id="datePickerTitle">デート相手を選択</h3>
+      <div id="datePickerList" class="picker-list"></div>
+      <div class="picker-actions">
+        <button onclick="closeDatePicker()">閉じる</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- デート先選択モーダル -->
+  <div id="spotPicker" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="spotPickerTitle">
+      <h3 id="spotPickerTitle">デート先を選択</h3>
+      <div id="spotPickerList" class="picker-list"></div>
+      <div class="picker-actions">
+        <button onclick="closeSpotPicker()">閉じる</button>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="state.js"></script>
+  <script defer src="ui.js"></script>
+  <script defer src="log.js"></script>
+  <script defer src="actions.js"></script>
+  <script defer src="main.js"></script>
+</body>
+
+</html>
