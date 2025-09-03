@@ -29,6 +29,12 @@
           <button id="btnDate" class="accent" onclick="date()">デート</button>
         </div>
       </div>
+      <!-- 直近カレンダー -->
+      <div class="card">
+        <h2 class="card-title">カレンダー（直近）</h2>
+        <div id="calendar" class="calendar-list"></div>
+      </div>
+
 
       <button id="restartBtn" class="restart" onclick="resetGame()" style="display:none;">もう一度</button>
     </section>
@@ -40,7 +46,7 @@
       </div>
 
       <div class="card log-card">
-        <h2 class="card-title">イベントログ（最新が上）</h2>
+        <h2 class="card-title">イベントログ</h2>
         <div id="log" class="log"></div>
       </div>
     </section>
@@ -72,6 +78,7 @@
   <script defer src="ui.js"></script>
   <script defer src="log.js"></script>
   <script defer src="actions.js"></script>
+  <script src="data/events.js"></script>
   <script defer src="main.js"></script>
 </body>
 

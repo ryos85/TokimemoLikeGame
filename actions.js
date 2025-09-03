@@ -6,7 +6,7 @@ function study() {
   const after = s.player.学力;
 
   renderStatus();
-  flashBadge('badge-gakuryoku','up');
+  flashBadge('badge-gakuryoku', 'up');
 
   const group = [
     { msg: "勉強を実行した！" },
@@ -32,7 +32,7 @@ function sports() {
   const after = s.player.運動;
 
   renderStatus();
-  flashBadge('badge-undou','up');
+  flashBadge('badge-undou', 'up');
 
   const group = [
     { msg: "運動を実行した！" },
@@ -58,7 +58,7 @@ function styleUp() {
   const after = s.player.魅力;
 
   renderStatus();
-  flashBadge('badge-miryoku','up');
+  flashBadge('badge-miryoku', 'up');
 
   const group = [
     { msg: "おしゃれを実行した！" },
@@ -92,6 +92,8 @@ function dateWithAt(heroIndex, spotId) {
   closeSpotPicker();
 
   const s = window.state;
+  s._hadDateThisWeek = true;
+
   const h = s.heroines[heroIndex];
   const spot = s.dateSpots.find(sp => sp.id === spotId);
   const before = h.好感度;

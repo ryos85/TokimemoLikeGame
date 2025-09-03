@@ -103,6 +103,7 @@ button.accent { background: #e9f6ff; border-color: #b6e2ff; }
   font-family: ui-monospace, Menlo, Consolas, "Noto Sans Mono", monospace;
   font-size: 12px; line-height: 1.3; white-space: normal; word-break: break-word;
   display: grid; gap: 4px; overflow-y: auto; padding-right: 4px; min-height: 0; max-height: 100%;
+  scroll-behavior: smooth;
 }
 .log .info { color: #2563eb; font-weight: 700; }
 .log .down { color: #dc2626; font-weight: 700; }
@@ -145,3 +146,51 @@ button.accent { background: #e9f6ff; border-color: #b6e2ff; }
 .picker-spotname { font-weight: 700; font-size: 16px; color: #222; }
 
 @media (max-width: 640px) { .container { grid-template-columns: 1fr; } }
+
+/* 誕生日プレゼント用モーダル（既存 .modal と衝突しない専用クラス） */
+.bday-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.35);
+  display: flex; align-items: center; justify-content: center; z-index: 9999;
+}
+.bday-modal {
+  background: #fff; border-radius: 10px; padding: 16px; width: min(420px, 92%);
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+.bday-modal h3 { margin: 0 0 8px; font-size: 18px; }
+.bday-modal p  { margin: 0 0 12px; font-size: 14px; opacity: .85; }
+.bday-modal .gift-list { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.bday-modal .gift-btn {
+  width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid #e5e7eb;
+  background: #f8fafc; cursor: pointer; text-align: left;
+}
+.bday-modal .gift-btn:hover { background: #eef2ff; }
+.bday-modal .close-row { margin-top: 10px; text-align: right; }
+.bday-modal .close-row button { padding: 6px 10px; border-radius: 6px; }
+/* === 直近カレンダー === */
+.calendar-list { display: grid; gap: 6px; }
+.cal-item { display: grid; grid-template-columns: 92px 1fr; align-items: center; gap: 8px; }
+.cal-when { font-weight: 700; color: #333; white-space: nowrap; }
+.cal-title { color: #222; }
+.cal-now {
+  margin-left: 6px; font-size: 11px; padding: 2px 6px; border-radius: 999px;
+  background: #fff7ed; border: 1px solid #fcd34d; color: #b45309; white-space: nowrap;
+}
+.cal-empty { color: #666; }
+/* 並べ替えアニメ用のヒント */
+.character { will-change: transform, opacity; }
+/* === ログ：週区切り（ラベル付き横罫線） === */
+.log-sep {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 12px;
+  margin: 8px 0;
+}
+.log-sep::before, .log-sep::after {
+  content: "";
+  height: 1px;
+  background: #ddd;
+  flex: 1;
+}
+.log-sep span { white-space: nowrap; }

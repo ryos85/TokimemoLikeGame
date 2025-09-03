@@ -13,7 +13,21 @@ function createInitialState() {
         セリフ: {
           success: ["今日すっごく楽しかった！", "また一緒に出かけようね！"],
           fail: ["なんかちょっと退屈だったかも…", "ごめん、疲れちゃった…"]
-        }
+        },
+        誕生日: {
+          month: 5,  // 5月
+          week: 2,   // 第2週
+          // 任意：誕生日のログ文（無ければ自動文）
+          messages: ["今日は私の誕生日…！"],
+          // 任意：同週イベントと重なったときの並び優先度（数値大きいほど先）
+          priority: 10,
+          // 任意：ギフト選択肢（無指定ならデフォルト3種が出ます）
+          gifts: [
+            { id: "flower", label: "花束", effects: { affection: { byName: { "さくら": 2 } } } },
+            { id: "book", label: "小説", effects: { player: { 学力: 1 }, affection: { byName: { "さくら": 1 } } } },
+            { id: "none", label: "何もしない", effects: { affection: { byName: { "さくら": 0 } } } }
+          ]
+        },
       },
       {
         名前: "あやか",
@@ -25,7 +39,21 @@ function createInitialState() {
         セリフ: {
           success: ["嬉しい！あなたといると安心する。", "こんなに楽しいの久しぶり！"],
           fail: ["…なんだか微妙だったかな。", "今日はちょっと気分が乗らなかったな…"]
-        }
+        },
+        誕生日: {
+          month: 5,  // 5月
+          week: 3,   // 第2週
+          // 任意：誕生日のログ文（無ければ自動文）
+          messages: ["今日は私の誕生日…！"],
+          // 任意：同週イベントと重なったときの並び優先度（数値大きいほど先）
+          priority: 10,
+          // 任意：ギフト選択肢（無指定ならデフォルト3種が出ます）
+          gifts: [
+            { id: "flower", label: "花束", effects: { affection: { byName: { "さくら": 2 } } } },
+            { id: "book", label: "小説", effects: { player: { 学力: 1 }, affection: { byName: { "さくら": 1 } } } },
+            { id: "none", label: "何もしない", effects: { affection: { byName: { "さくら": 0 } } } }
+          ]
+        },
       },
       {
         名前: "ひかり",
@@ -37,7 +65,21 @@ function createInitialState() {
         セリフ: {
           success: ["体を動かすのって最高！", "すごく気持ちよかったね！"],
           fail: ["今日はちょっと合わなかったかも…", "次は別の場所に行こう？"]
-        }
+        },
+        誕生日: {
+          month: 5,  // 5月
+          week: 4,   // 第2週
+          // 任意：誕生日のログ文（無ければ自動文）
+          messages: ["今日は私の誕生日…！"],
+          // 任意：同週イベントと重なったときの並び優先度（数値大きいほど先）
+          priority: 10,
+          // 任意：ギフト選択肢（無指定ならデフォルト3種が出ます）
+          gifts: [
+            { id: "flower", label: "花束", effects: { affection: { byName: { "さくら": 2 } } } },
+            { id: "book", label: "小説", effects: { player: { 学力: 1 }, affection: { byName: { "さくら": 1 } } } },
+            { id: "none", label: "何もしない", effects: { affection: { byName: { "さくら": 0 } } } }
+          ]
+        },
       },
       {
         名前: "ゆい",
@@ -49,7 +91,21 @@ function createInitialState() {
         セリフ: {
           success: ["静かな時間が心地よかった。", "素敵な選択だと思う。"],
           fail: ["少し賑やかすぎたかな。", "今日は集中できなかったかも。"]
-        }
+        },
+        誕生日: {
+          month: 4,  // 5月
+          week: 3,   // 第2週
+          // 任意：誕生日のログ文（無ければ自動文）
+          messages: ["今日は私の誕生日…！"],
+          // 任意：同週イベントと重なったときの並び優先度（数値大きいほど先）
+          priority: 10,
+          // 任意：ギフト選択肢（無指定ならデフォルト3種が出ます）
+          gifts: [
+            { id: "flower", label: "花束", effects: { affection: { byName: { "さくら": 2 } } } },
+            { id: "book", label: "小説", effects: { player: { 学力: 1 }, affection: { byName: { "さくら": 1 } } } },
+            { id: "none", label: "何もしない", effects: { affection: { byName: { "さくら": 0 } } } }
+          ]
+        },
       },
       {
         名前: "めぐみ",
@@ -61,15 +117,29 @@ function createInitialState() {
         セリフ: {
           success: ["雰囲気が最高だったね！", "今日は特別な気分になれたよ。"],
           fail: ["ちょっとピンと来なかったかな。", "気分を変えてまた行こう？"]
-        }
+        },
+        誕生日: {
+          month: 6,  // 5月
+          week: 1,   // 第2週
+          // 任意：誕生日のログ文（無ければ自動文）
+          messages: ["今日は私の誕生日…！"],
+          // 任意：同週イベントと重なったときの並び優先度（数値大きいほど先）
+          priority: 10,
+          // 任意：ギフト選択肢（無指定ならデフォルト3種が出ます）
+          gifts: [
+            { id: "flower", label: "花束", effects: { affection: { byName: { "さくら": 2 } } } },
+            { id: "book", label: "小説", effects: { player: { 学力: 1 }, affection: { byName: { "さくら": 1 } } } },
+            { id: "none", label: "何もしない", effects: { affection: { byName: { "さくら": 0 } } } }
+          ]
+        },
       }
     ],
     dateSpots: [
-      { id: "cinema",   名称: "映画館" },
-      { id: "cafe",     名称: "カフェ" },
-      { id: "park",     名称: "公園" },
-      { id: "library",  名称: "図書館" },
-      { id: "gym",      名称: "スポーツセンター" },
+      { id: "cinema", 名称: "映画館" },
+      { id: "cafe", 名称: "カフェ" },
+      { id: "park", 名称: "公園" },
+      { id: "library", 名称: "図書館" },
+      { id: "gym", 名称: "スポーツセンター" },
       { id: "aquarium", 名称: "水族館" }
     ],
     turn: 1,
@@ -82,10 +152,10 @@ function createInitialState() {
 
 // 好感度アップの理由一覧
 const REASONS = {
-  study:  ["勉強の話題で盛り上がった", "ノートの取り方を褒められた", "質問に丁寧に答えた"],
+  study: ["勉強の話題で盛り上がった", "ノートの取り方を褒められた", "質問に丁寧に答えた"],
   sports: ["練習を手伝ってくれた", "頑張る姿がかっこよかった", "一緒にランニングした"],
-  styleUp:["身だしなみが整っていた", "新しい服が似合っていた", "香りに気づいてくれた"],
-  date:   ["段取りが完璧だった", "気遣いが伝わった", "楽しい場所を選べた"],
+  styleUp: ["身だしなみが整っていた", "新しい服が似合っていた", "香りに気づいてくれた"],
+  date: ["段取りが完璧だった", "気遣いが伝わった", "楽しい場所を選べた"],
   random: ["ちょっとした気配りが嬉しかった", "タイミングよく助けてくれた", "一緒にいて安心した"]
 };
 
