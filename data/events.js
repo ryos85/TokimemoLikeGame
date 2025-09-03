@@ -1,4 +1,5 @@
-[
+// ローカル(file://)でも読めるイベント定義
+window.GAME_EVENTS = [
     {
         "month": 4,
         "week": 1,
@@ -60,4 +61,4 @@
         "term": "winter"
     }
 
-]
+];
